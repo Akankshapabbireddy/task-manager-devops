@@ -12,19 +12,19 @@ pipeline {
         stage('Docker Version') {
             steps {
                 bat 'docker --version'
-                bat 'docker compose version'
+                bat 'docker-compose --version'
             }
         }
 
         stage('Validate Docker Compose') {
             steps {
-                bat 'docker compose config'
+                bat 'docker-compose config'
             }
         }
 
         stage('Build Docker Images') {
             steps {
-                bat 'docker compose build'
+                bat 'docker-compose build'
             }
         }
     }
