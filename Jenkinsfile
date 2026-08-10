@@ -8,6 +8,11 @@ pipeline {
                 echo 'Checking out source code from GitHub...'
             }
         }
+        stage('Prepare Environment') {
+            steps {
+                bat 'copy /Y .env.example .env'
+            }
+        }
 
         stage('Docker Version') {
             steps {
